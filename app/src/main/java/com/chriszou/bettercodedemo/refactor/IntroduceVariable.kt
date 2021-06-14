@@ -1,9 +1,5 @@
 package com.chriszou.bettercodedemo.refactor
 
-class Order(val quantity: Int, val itemPrice: Double)
-enum class Gender {MALE, FEMALE, UNKNOWN}
-class User(val id: String, val age: Int, val gender: Gender)
-
 class IntroduceVariable {
 
     fun getFinalPrice(order: Order): Double {
@@ -13,21 +9,21 @@ class IntroduceVariable {
     }
 
     fun getMarried(user: User) {
-
-
-
-
+        /**
+         * ...other code...
+         */
 
         if (user.gender == Gender.MALE && user.age >= 22 || user.gender == Gender.FEMALE && user.age >= 20) {
             /**
              * 登记结婚
              */
-
         }
-
-
-
 
     }
 
 }
+
+class Order(val quantity: Int, val itemPrice: Double)
+enum class Gender {MALE, FEMALE, UNKNOWN}
+class User(val id: String, val age: Int, val gender: Gender)
+

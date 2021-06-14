@@ -1,10 +1,5 @@
 package com.chriszou.bettercodedemo.refactor
 
-class EncapsulateCollection {
-
-}
-
-
 class OrderRepo {
     private val orders = mutableListOf<Order>()
 
