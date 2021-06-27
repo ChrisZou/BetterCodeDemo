@@ -1,5 +1,9 @@
 package com.chriszou.bettercodedemo.refactor
 
+class Order(val quantity: Int, val itemPrice: Double)
+enum class Gender {MALE, FEMALE, UNKNOWN}
+class User(val id: String, val username: String, val age: Int, val gender: Gender)
+
 class IntroduceVariable {
 
     fun getFinalPrice(order: Order): Double {
@@ -22,8 +26,3 @@ class IntroduceVariable {
     }
 
 }
-
-class Order(val quantity: Int, val itemPrice: Double)
-enum class Gender {MALE, FEMALE, UNKNOWN}
-class User(val id: String, val age: Int, val gender: Gender)
-
