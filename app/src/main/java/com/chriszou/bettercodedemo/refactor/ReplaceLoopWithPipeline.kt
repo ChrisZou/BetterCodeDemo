@@ -7,16 +7,20 @@ class ReplaceLoopWithPipeline {
 
         val employees = allEmployees()
 
-        var totalRDSalary = 0.0
-        var rdCount = 0
-        employees.forEach {
-            if (it.role == EmployeeRole.RD) {
-                totalRDSalary += it.salary
-                rdCount ++
-            }
-        }
+        return employees.filter { it.role == EmployeeRole.RD }
+            .map { it.salary }
+            .average()
 
-        return totalRDSalary / rdCount
+//        var totalRDSalary = 0.0
+//        var rdCount = 0
+//        employees.forEach {
+//            if (it.role == EmployeeRole.RD) {
+//                totalRDSalary += it.salary
+//                rdCount ++
+//            }
+//        }
+//
+//        return totalRDSalary / rdCount
 
     }
 

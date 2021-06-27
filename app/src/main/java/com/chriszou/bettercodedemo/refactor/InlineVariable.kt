@@ -7,8 +7,7 @@ class InlineVariable {
         val discount = Math.max(0, order.quantity - 500) * order.itemPrice * 0.05
         val shippingPrice = Math.min(basePrice * 0.1, 100.0)
 
-        val finalPrice = basePrice - discount + shippingPrice
-        return finalPrice
+        return basePrice - discount + shippingPrice
     }
 
 
@@ -16,7 +15,6 @@ class InlineVariable {
 
         val userId = user.id
         val orders = getUserOrders(userId)
-
 
         orders.forEach { println(it.itemPrice) }
     }

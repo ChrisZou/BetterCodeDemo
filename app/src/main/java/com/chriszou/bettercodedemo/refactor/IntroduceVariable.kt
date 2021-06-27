@@ -7,9 +7,11 @@ class User(val id: String, val username: String, val age: Int, val gender: Gende
 class IntroduceVariable {
 
     fun getFinalPrice(order: Order): Double {
-        return order.quantity * order.itemPrice -
-                Math.max(0, order.quantity - 500) * order.itemPrice * 0.05 +
-                Math.min(order.quantity * order.itemPrice * 0.1, 100.0)
+        val basePrice = order.quantity * order.itemPrice
+        val discount = Math.max(0, order.quantity - 500) * order.itemPrice * 0.05
+        val shippingFee = Math.min(basePrice * 0.1, 100.0)
+
+        return basePrice - discount + shippingFee
     }
 
     fun getMarried(user: User) {
@@ -17,7 +19,9 @@ class IntroduceVariable {
          * ...other code...
          */
 
-        if (user.gender == Gender.MALE && user.age >= 22 || user.gender == Gender.FEMALE && user.age >= 20) {
+        val reachLegalMarriageAge = user.gender == Gender.MALE && user.age >= 18
+                || user.gender == Gender.FEMALE && user.age >= 20
+        if (reachLegalMarriageAge) {
             /**
              * 登记结婚
              */
